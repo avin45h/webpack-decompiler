@@ -1,10 +1,8 @@
 var fs = require('fs');
 var sourceMap = require('source-map');
 var exec = require('child_process').exec; 
-var jsFile = process.argv[2];
-var mapFile = `${jsFile}.map`;
+var mapFile =  process.argv[2];
 var outputDir = "output";
-var jsFileData = fs.readFileSync(jsFile, 'utf8');
 var mapInstance = new sourceMap.SourceMapConsumer(fs.readFileSync(mapFile, 'utf8'));
 
 var writeFile = (dirName, fileName, contents) => {
